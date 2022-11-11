@@ -29,7 +29,7 @@ const isActive = ref(false);
         />
       </svg>
     </div>
-    <img src="../../favicon-32x32.png" alt="logo" />
+    <img src="favicon-32x32.png" alt="logo" />
     <div class="header-item">LearnJs</div>
   </header>
 
