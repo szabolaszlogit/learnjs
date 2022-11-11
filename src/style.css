@@ -121,6 +121,7 @@ body {
   --blue: #1e36f7;
   --grey: #e7e9eb;
   --grey-font: #213547;
+  --red: #f14c37;
 }
 
 a {
@@ -139,7 +140,6 @@ article {
   color: var(--grey-font);
   line-height: 1.7rem;
   margin: 1rem 0 0 0;
-  padding: 1rem;
 }
 
 .router-link-active,
@@ -162,6 +162,8 @@ code pre {
   border-radius: 5px;
   white-space: pre-wrap;
 }
+
+
 
 @media screen and (min-width: 576px) {
   article {

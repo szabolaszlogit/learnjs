@@ -1,30 +1,34 @@
-<script setup></script>
+<script setup>
+import JsQuestion from "../components/JsQuestion.vue";
+import { questions } from "../assets/questions";
+</script>
 
 <template>
   <article>
-    <p>
-        js interview.<code>array</code>, ez inline <code>array</code>, dsd dsft5rzgc
-        v dh.
-    </p>
-    
-
-    <code>
-      <pre>
-    asynh function valami (){
-let a = 2;
-// sdsssds dsad dsfdsfd hgfhghfgh ju juz serre ewrwe r ttz zrzt rt 9
-const obj = {tul: "dsassds"}
-    }
-data() {
-  return {
-    isActive: true,
-    hasError: false
-  }
-}
-</pre
+    <js-question v-for="(question, index) in questions">
+      <template #question
+        ><p class="question">{{index}}. {{ question.q }}</p></template
       >
-    </code>
+      <template #answer><p  class="answer">{{ question.a }}</p></template>
+
+      <template v-if="question.code != null" #code>
+        <code>
+          <pre>{{ question.code }}</pre>
+        </code></template
+      >
+    </js-question>
   </article>
 </template>
 
-<style></style>
+<style>
+.question {
+  background-color: var(--red);
+  color: var(--white);
+  padding:1rem;
+}
+
+.answer{
+    background-color:#f9f9f9;
+    padding: 1rem
+}
+</style>
