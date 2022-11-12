@@ -1,4 +1,5 @@
 # A basic redirect rule for etlify (page not found on refresh)
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/"
+  status = 200
