@@ -7,9 +7,10 @@ import { questions } from "../assets/questions";
   <article>
     <js-question v-for="(question, index) in questions">
       <template #question
-        ><p class="question">{{index}}. {{ question.q }}</p></template
+        ><p class="question">{{index}}. <span v-html="question.q"></span></p></template
       >
-      <template #answer><p  class="answer">{{ question.a }}</p></template>
+    
+      <template #answer><p  class="answer" v-html="question.a"></p></template>
 
       <template v-if="question.code != null" #code>
         <code>
@@ -29,6 +30,7 @@ import { questions } from "../assets/questions";
 
 .answer{
     background-color:#f9f9f9;
-    padding: 1rem
+    padding: 1rem;
+    line-height: 1.7rem;
 }
 </style>

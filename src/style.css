@@ -150,7 +150,8 @@ article {
 p code {
   font-family: Consolas, sans-serif;
   font-size: 1rem;
-  background-color: var(--grey);
+  background-color: var(--grey-font);
+  color: var(--white);
   padding: 0.2rem 0.5rem;
 }
 code pre {

@@ -3,10 +3,7 @@
 <template>
   <footer>
     <nav>
-      <a class="nav-item" routerLink="/heroes">Heroes</a>
-      <a class="nav-item" routerLink="/heroes">Heroes</a>
-      <a class="nav-item" routerLink="/heroes">Heroes</a>
-      <a class="nav-item" routerLink="/heroes">Heroes</a>
+      <a class="nav-item" routerLink="/kapcsolat">Kapcsolat</a>
       <img class="nav-item" src="/favicon-32x32.png" alt="logo" />
     </nav>
   </footer>
