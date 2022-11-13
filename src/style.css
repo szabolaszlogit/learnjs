@@ -136,7 +136,7 @@ main {
 }
 
 article {
-  width: 100vw;
+  width: 95vw;
   color: var(--grey-font);
   line-height: 1.7rem;
   margin: 1rem 0 0 0;
