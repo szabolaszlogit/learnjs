@@ -16,6 +16,10 @@ const router = createRouter({
     {
       path: '/js-interju-kerdesek',
       component: () => import('../views/JsInterviewView.vue')
+    },
+    {
+      path: '/js-interju-kodok',
+      component: () => import('../views/JsInterviewCodeView.vue')
     }
   ]
 })

@@ -178,7 +178,7 @@ o2.b === 22 //true -  A tulajdonság eltakarja a prototípus (o1) azonos nevű t
     <br>
     Másképp fogalmazva: lefuttatnak egy funkciót a megadott kontextussal (context) és paraméterekkel.
     <br>
-    Legegyszerübben: van egy adat (objektum), és egy föggvény. A call, apply, bind segítségével a függvény sajátjaként tudja használni az adatot.
+    Legegyszerübben: van egy adat (objektum), és egy függvény. A call, apply, bind segítségével a függvény sajátjaként tudja használni az adatot.
     <br>
     A <code>call()</code>, <code>apply()</code> és a <code>bind()</code> a <code>this</code> kulcsszót átállítja a köcsönzött metódusra.
     <br>
