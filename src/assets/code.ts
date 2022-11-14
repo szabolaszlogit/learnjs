@@ -29,7 +29,7 @@ export const questions: { q: string; a: string; code?: string }[] = [
   `,
   },
   {
-    q:`
+    q: `
     <code><pre>
     function foo() {
       let x = (y = 0);
@@ -48,17 +48,17 @@ export const questions: { q: string; a: string; code?: string }[] = [
     <br>
     4: 1, number, number
     `,
-    a:`3: 1, undefined, number
+    a: `3: 1, undefined, number
     <br>
     A <code>foo()</code> lefut, és visszaadja: 1.
     <br>
     A <code>let x</code> az lokális változó, a blokkon belül él, ezért undefined.
     <br>
     Az y, mivel kulcsszó nélkül volt deklarálva, akaratlanul is globális változó lett, így mindenhonnan elérhető.
-    `
+    `,
   },
   {
-    q:`
+    q: `
     <code><pre>
     function main() {
       console.log("A");
@@ -78,11 +78,25 @@ export const questions: { q: string; a: string; code?: string }[] = [
     4: A, C, B
     <br>
     `,
-    a:`
+    a: `
     4: A, C, B
     <br>
     Az evenlt loop működése alapján alőször a szinkron folyamatok futnak le, és csak aztán kezdődnek az asszinkron folyamatok. 
     A <code>setTiemout()</code> miatt az asszinkron kód csak a szinkronosak után indul el.
-    `
-  }
+    `,
+  },
+  {
+    q: ` Mi lesz ebből? <code><pre>[..."Micimackó"];</pre> </code>  `,
+    a: ` ['M', 'i', 'c', 'i', 'm', 'a', 'c', 'k', 'ó'].
+    <br>
+A stingeken végig lehet iterálni, és a spread operátor egy tömbön belül minden iterálható elemből létrehoz egy elemet.
+    `,
+  },
+  {
+    q: ` Mi lesz ebből? <code><pre>console.log("Tanulj JS-t"[0]);</pre> </code>  `,
+    a: ` T.
+    <br>
+   A "T" a string nulladik eleme.
+    `,
+  },
 ];

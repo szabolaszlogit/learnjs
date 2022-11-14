@@ -3,7 +3,16 @@ import { ref } from "vue";
 
 let typeValue = ref("");
 let typeStatus = ref(false);
-let displayTextArray = ["closure", "hoisting", "NaN", "callback", "propotype", "slice"];
+let displayTextArray = [
+  "closure",
+  "hoisting",
+  "NaN",
+  "callback",
+  "propotype",
+  "slice",
+  "promise",
+  "bind",
+];
 let typingSpeed = 100;
 let erasingSpeed = 100;
 let newTextDelay = 2000;
@@ -49,9 +58,26 @@ setTimeout(typeText(), newTextDelay + 200);
     <span> Mi a </span>
 
     <code>
-      <span class="typed-text"> {{ typeValue }}|</span>
+      <span class="typed-text"> {{ typeValue }}</span
+      ><span class="cursor">|</span>
     </code>
   </p>
 </template>
 
-<style scoped></style>
+<style scoped>
+@keyframes show-hide {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.cursor {
+  opacity: 0;
+  animation-name: show-hide;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+</style>

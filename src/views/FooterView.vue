@@ -3,8 +3,13 @@
 <template>
   <footer>
     <nav>
-      <a class="nav-item" routerLink="/kapcsolat">Kapcsolat</a>
-      <img class="nav-item" src="/favicon-32x32.png" alt="logo" />
+      <router-link class="nav-item" to="/kapcsolat">Kapcsolat</router-link>
+      <img
+        class="nav-item"
+        src="/logo.svg"
+        alt="logo"
+        style="width: 32px; height: auto"
+      />
     </nav>
   </footer>
 </template>
