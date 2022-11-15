@@ -99,4 +99,106 @@ A stingeken végig lehet iterálni, és a spread operátor egy tömbön belül m
    A "T" a string nulladik eleme.
     `,
   },
+  {
+    q: `Ez az egyenlőség <code><pre>0.1 + 0.2 === 0.3 // true?</pre></code>`,
+    a: `Nem, ez <code>false.</code>
+    <br>
+    A lebegőpontos számok bináris ábrázolása miatt a két szám összeadásának végeredménye: 0.30000000000000004.
+    `,
+  },
+  {q:`<code><pre>
+  var y = 1;
+  if (function f() {}) {
+    y += typeof f;
+  }
+  console.log(y);
+  </pre></code>
+  ` 
+  ,
+a:`Az eredmény: <code>1undefined</code>.
+<br>
+A feltételvizsgálat eredménye mindig true, mert létrejön a függvény. Azonban, nincs deklarálva, ezért undefined, és a típusa is undefined.
+  <br>
+  Így viszont: 1function, csakhogy a b globális változó lett, ami nem jó.  
+`,
+code:`
+var y = 1;
+if (b = function f() {}) {
+    y += typeof b;
+  }
+console.log(y);`
+},
+{
+  q:`<code><pre>
+var myChars = ["a", "b", "c", "d"];
+delete myChars[0];
+console.log(myChars);
+console.log(myChars[0]);
+console.log(myChars.length);
+</pre></code>
+`,
+  a:`Az eredmény: <code>[empty, 'b', 'c', 'd'], undefined, 4</code>
+  <br>
+  Bizonyos böngészőkben: <code>[undefined, 'b', 'c', 'd'], undefined, 4</code>.
+  <br> Sőt, magyarul (Chrome): <code>[üres, 'b', 'c', 'd'], undefined, 4</code>
+  <br>
+  A <code>delete</code> törli a tulajdonságot, de nem indexel újra, nem változik a tömb hossza.
+  `
+},
+{
+  q:`<code><pre>
+  const obj = {
+    prop1: function () {
+      return 0;
+    },
+    prop2() {
+      return 1;
+    },
+    ["prop" + 3]() {
+      return 2;
+    },
+  };
+  
+  console.log(obj.prop1());
+  console.log(obj.prop2());
+  console.log(obj.prop3());
+  </pre></code>`,
+  a:`0,1,2. A prop1 egy hagyományosan létrehozott függvény, a prop2 és prop3 viszont ES6-os, rövidített forma.`
+},
+{
+  q:`<code><pre>
+    console.log(1 < 2 < 3);
+    console.log(3 > 2 > 1);
+</pre></code>`,
+  a:` `,
+  code:`
+true false
+
+// balról jobbra hajtódik végre, az 1 true értéknek felel meg boolean összehasonlításban
+console.log(1 < 2 < 3);  // 1 < 2: true
+console.log(true < 3); // true: 1 -> 1 < 3
+console.log(1 < 3); 
+True
+
+console.log(3 > 2 > 1); //3 > 2: true
+console.log(true > 1); // 1 > 1
+console.log(1 > 1); 
+False
+  `
+},
+{
+  q:`<code><pre>
+
+  // nem strict mode
+  function printNumbers(first, second, first) {
+    console.log(first, second, first);
+  }
+  printNumbers(1, 2, 3);
+  </pre></code>`,
+  a:`3, 2, 3
+  <br>
+  Nem strict módban, engedéylezett a duplikált paraméternév. Azonban, itt a harmadik paraméter felülírja az elsőt.
+  `
+
+}
 ];
