@@ -321,12 +321,170 @@ console.log(browser);
     a: `-1
     <br>
     Az <code>indexOf()</code> === összehasonlítást használ. A szabványok alapján a NaN nem egyenlő még önmaghával sem. De:`,
-  code:`
+    code: `
   let numbers = [1, 2, 3, 4, NaN];
   
   console.log(numbers.findIndex(Number.isNaN)); // 4
   
-  console.log(numbers.includes(NaN)); // true`
+  console.log(numbers.includes(NaN)); // true`,
+  },
+  {
+    q: `
+    <code><pre>
+    let [a, ...b,] = [1, 2, 3, 4, 5];
+    console.log(a, b);
+    </pre></code>`,
+    a: `SyntaxError
+    <br>
+    A rest paramétereknél nem szerepelhet: <code>,</code>`,
+    code: `
+    let [a, ...b] = [1, 2, 3, 4, 5];
+    console.log(a, b); // 1, [2, 3, 4, 5]
+    `,
+  },
+  {
+    q: `
+    <code><pre>
+    async function func() {
+      return 10;
+    }
+    console.log(func());   
+    </pre></code>`,
+    a: `<code>Promise  {< fulfilled >: 10 }</code>
+    <br>
+    Az async mindeig egy promise-vel tér vissza, ha nem promise a visszatérési érték, akkor átalakítja.`,
+  },
+  {
+    q: `
+    <code><pre>
+    let myNumber = 100;
+    let myString = "100";
+    
+    if (!typeof myNumber === "string") {
+      console.log("It is not a string!");
+    } else {
+      console.log("It is a string!");
+    }
+    
+    if (!typeof myString === "number") {
+      console.log("It is not a number!");
+    } else {
+      console.log("It is a number!");
+    } 
+    </pre></code>
+    `,
+    a: `It is a string!, It is a number!<br>
+
+    `,
+    code: `
+    typeof myNumber // 'number'
+    !typeof myNumber // boolean lesz: true (truthy )
+    true === 'number' // false
+
+    // mindkétszer else ágra fut
+
+    !(typeof myNumber === "string") // ez így true
+    
+    `,
+  },
+
+  {
+    q: `
+    <code><pre>
+    const numbers = [11, 25, 31, 23, 33, 18, 200];
+    numbers.sort();
+    console.log(numbers);   
+    </pre></code>
+    1: [11, 18, 23, 25, 31, 33, 200] <br>
+2: [11, 18, 200, 23, 25, 31, 33] <br>
+3: [11, 25, 31, 23, 33, 18, 200] <br>
+    `,
+    a: `2: [11, 18, 200, 23, 25, 31, 33]
+    <br>
+    A <code>sort()</code> abc sorrendbe rekja az elemeket, ezért stringé konvertál.
+    `,
+    code: `
+
+    // így működik számokkal
+    const numbers = [11, 25, 31, 23, 33, 18, 200];
+    numbers.sort((a, b) => a - b);
+    console.log(numbers); 
+    //  [11, 18, 23, 25, 31, 33, 200]
+    `,
+  },
+  {
+    q: `
+    <code><pre>
+    getMessage();
+
+    var getMessage = () => {
+      console.log("Good morning");
+    };
+    </pre></code>
+    1: Good morning<br>
+2: getMessage is not a function<br>
+3: getMessage is not defined<br>
+4: Undefined<br>
+    `,
+    a: `2: getMessage is not a function
+    <br>
+    A getMessage egy változó, ami a hositing miatt a kód tetejére kerül - de mint változó, nem mint függvény.`,
+  },
+  {
+    q: `
+    <code><pre>
+let arr = [1, 2, 3];
+let str = "1,2,3";
+
+console.log(arr == str);
+    </pre></code>`,
+    a: `Treue.
+    <br>
+    Az array típus átkonvertálódik stringé az összehasonlítás miatt. Ilyenkor az elemeiből vesszővel határolt lista lesz.
+    <br>
+    === ezzel nem működne, false lesz.`,
+  },
+  {
+    q: `
+    <code><pre>
+    1: console.log(true && 'hi');
+    2: console.log(true && 'hi' && 1);
+    3: console.log(true && '' && 0);    
+    </pre></code>`,
+    a: `1: hi<br>
+    2: 1<br>
+    3: ''<br>
+    Ha több és operátort láncolunk egymás után, akkor ez a lánc addig a pontig fog kiértékelődni, amíg az éppen vizsgált kifejezés igazat ad. Az utolsó kifejezés akkor fog kiértékelődni, ha minden korábbi igaz lett, és ezzel az értékkel tér vissza. Ha false (falsy) értéket talál, azzal tér vissza.
+    `,
+  },
+  {
+    q: `
+    <code><pre>
+    
+    </pre></code>`,
+    a: ``,
+  },
+  {
+    q: `
+    <code><pre>
+    
+    </pre></code>`,
+    a: ``,
+  },
+  {
+    q: `
+    <code><pre>
+    
+    </pre></code>`,
+    a: ``,
+  },
+
+  {
+    q: `
+    <code><pre>
+    
+    </pre></code>`,
+    a: ``,
   },
   {
     q: `
